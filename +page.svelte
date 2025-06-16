@@ -51,10 +51,12 @@
 			if (dashboardChecked) {
 				console.log('Checkbox[line 52] dashboardChecked: ', dashboardChecked);
 				localStorage.setItem('isApp', 'true');
+				localStorage.setItem('selectedView', 'true');
 				goto('/dashboard');
 			} else {
 				localStorage.removeItem('isApp');
-				console.log('Checkbox[line 57] dashboardChecked: ', dashboardChecked);
+				localStorage.removeItem('selectedView');
+				console.log('Checkbox[line 59] dashboardChecked: ', dashboardChecked);
 				goto('/');
 			}
 			await config.set(await getBackendConfig());
